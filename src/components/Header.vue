@@ -1,6 +1,6 @@
 <template>
-    <header class="d-flex justify-content-around align-items-center">
-        <div class="d-flex align-content-center"><h2 class="mb-0">Vue Furniture Store</h2></div>
+    <header id="nav" class="d-flex justify-content-around align-items-center">
+        <router-link to="/"><h2 id="text-home" class="mb-0">Vue Furniture Store</h2></router-link>
         <Nav></Nav>
     </header>
 </template>
@@ -20,9 +20,14 @@ export default {
     header{
         width:100%;
         height: 8vh;
-        color: #6ba292;
         top: 0;
         box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
         position: sticky;
+    }
+    #text-home{
+        color:#42b983;
+    }
+    #text-home:hover{
+        color:#2c3e50;
     }
 </style>

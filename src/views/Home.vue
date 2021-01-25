@@ -1,13 +1,12 @@
 <template>
     <div id="main" class="d-flex justify-content-center
     align-items-center">
-        <router-view/>
-        
+        <Landing></Landing>
     </div>
 </template>
 
 <script>
-import Landing from './Landing'
+import Landing from '../components/Landing'
 
 export default {
     name: 'Main',

@@ -33,8 +33,6 @@ export default {
         width: 90%;
         height: 90%;
         background: #fff;
-        border-radius: 1em;
-        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.4);
         display: grid;
         grid-template-columns: 40% 60%;
     }
