@@ -29,5 +29,13 @@ export default {
     }
     #text-home:hover{
         color:#2c3e50;
+        text-decoration: underline;
+        text-decoration-color: #42b983;
+        text-decoration-thickness: 1px;
     }
+    a:hover {
+        text-decoration: none;
+    }
+    
+    
 </style>

@@ -2,7 +2,7 @@
     <div id="landing">
         <div id="landingText" class="d-flex flex-column justify-content-center align-content-between">
             <h4 class="d-4">Quality and design within reach</h4>
-            <h1 class="d-1">Furnish your dreams. </h1>
+            <h1 class="d-1">Furnish your dreams</h1>
             <h5 class="d-5">We offer you a wide and varied selection of styles to combine, as well as the best and most innovative collections of furniture, auxiliary, sofas, armchairs, dining rooms, decoration, lighting, bedrooms, mattresses, rest equipment and outdoor furniture ...</h5>
         </div>
         <div id="landingImage">
@@ -49,6 +49,13 @@ export default {
     img{
         max-width: 80%;
         max-height: 80%;
+    }
+    h1{
+        color: #42b983;
+    }
+    h5{
+        text-align: justify;
+        text-justify: inter-word;
     }
     #img2 > img{
         max-width: 70%;
