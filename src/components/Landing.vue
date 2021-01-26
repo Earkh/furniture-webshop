@@ -1,11 +1,11 @@
 <template>
-    <div id="landing">
-        <div id="landingText" class="d-flex flex-column justify-content-center align-content-between">
+    <div id="landing" class="row d-flex justify-content-center">
+        <div id="landingText" class="d-flex flex-column justify-content-center align-content-between col-sm-10 col-md-8 col-lg-4">
             <h4 class="d-4">Quality and design within reach</h4>
             <h1 class="d-1">Furnish your dreams</h1>
             <h5 class="d-5">We offer you a wide and varied selection of styles to combine, as well as the best and most innovative collections of furniture, auxiliary, sofas, armchairs, dining rooms, decoration, lighting, bedrooms, mattresses, rest equipment and outdoor furniture ...</h5>
         </div>
-        <div id="landingImage">
+        <div id="landingImage" class="col-sm-10 col-md-8 col-lg-6">
             <div id="img1" class="d-flex justify-content-end align-items-end">
                 <img src="../assets/bedroom.jpg" class="img-fluid rounded" alt="Bedroom">
             </div>
@@ -33,11 +33,9 @@ export default {
         width: 90%;
         height: 90%;
         background: #fff;
-        display: grid;
-        grid-template-columns: 40% 60%;
     }
     #landingText{
-        padding: 20%;
+        padding: 5%;
     }
 
     #landingImage{
@@ -64,5 +62,8 @@ export default {
     #img3 > img{
         max-width: 60%;
         max-height: 60%;
+    }
+    #img4 > img{
+        max-height: 70%;
     }
 </style>
