@@ -23,6 +23,7 @@ export default {
         top: 0;
         box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.2);
         position: sticky;
+        background: #fff;
     }
     #text-home{
         color:#42b983;
