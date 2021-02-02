@@ -9,7 +9,6 @@ const login = async (email, password) => {
     try {
         const res = await auth.signInWithEmailAndPassword(email, password)
         error.value = null
-        console.log(res)
         
         return res
     } catch(err) {
