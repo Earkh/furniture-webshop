@@ -36,36 +36,36 @@ import { projectFirestore } from '../firebase/config'
 const res = projectFirestore.collection('users');
 
 export default {
-  data() {
-    return {
-      user: {
-        name: '',
-        address: '',
-        email: '',
-        password: ''
-      },
-      error: null
-    };
-  },
-  methods: {
-    submit() {
-      firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.user.email, this.user.password)
-        .then((res) => {
-          res.user
-            .updateProfile({
-              displayName: this.user.name
+    data() {
+        return {
+        user: {
+            name: '',
+            address: '',
+            email: '',
+            password: ''
+        },
+        error: null
+        };
+    },
+    methods: {
+        submit() {
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(this.user.email, this.user.password)
+            .then((res) => {
+            res.user
+                .updateProfile({
+                displayName: this.user.name
+                })
+                .then(() => {
+                    this.$router.push('/login')
+                });
             })
-            .then(() => {
-                this.$router.push('/login')
+            .catch(err => {
+            this.error = err.message;
             });
-        })
-        .catch(err => {
-          this.error = err.message;
-        });
+        }
     }
-  }
 };
 </script>
 <style scoped>
