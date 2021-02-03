@@ -18,7 +18,7 @@
                     <h6 class="card-title mb-2">Confirm Password</h6>
                     <input type="password" name="password2" class="form-control mb-2" required>
                     <br>
-                    <button type="submit" class="btn btn-primary">Register</button>
+                    <button type="submit" class="btn btn-vue">Register</button>
                 </form>
             </div>
         </div>

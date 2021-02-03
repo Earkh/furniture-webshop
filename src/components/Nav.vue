@@ -3,15 +3,16 @@
         <!-- <div class="navButtonsContainer d-flex justify-content-around align-content-center align-items"> | -->
         <div v-if="user">
             <img src="@/assets/user.png" alt="User" style="height: 3vh;" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="btn btn-outline-danger dropdown-item" @click="handleClick">Logout</a>
-                </div>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a>
+            </div>
         </div>
         <div v-else>
             <router-link to="/signup"><img src="@/assets/user.png" alt="User" style="height: 3vh;"></router-link>
         </div>
+        <!-- <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a> -->
     </nav>
 </template>
 <script>
@@ -42,5 +43,8 @@ export default {
         height: 3vh;
         width: 20%;
         display: inline-block;
+    }
+    .dropdown-item:hover{
+        background: #42b983;
     }
 </style>
