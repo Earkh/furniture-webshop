@@ -9,22 +9,22 @@
             <div class="row h-100 w-100">
                 <div id="img1" class="img-container col-sm-12 col-md-12 col-lg-6 col-xl-6">
                     <div class="overlay">
-                        <div class="text">Hello World</div>  //TODO Fix IMG overlays
+                        <div class="text">Bedroom</div> 
                     </div>
                 </div>
                 <div id="img2" class="img-container col-sm-12 col-md-12 col-lg-6 col-xl-6">
                     <div class="overlay">
-                        <div class="text">Hello World</div>  //TODO Fix IMG overlays
+                        <div class="text">Kitchen</div> 
                     </div>
                 </div>
                 <div id="img3" class="img-container col-sm-12 col-md-12 col-lg-6 col-xl-6">
                     <div class="overlay">
-                        <div class="text">Hello World</div>  //TODO Fix IMG overlays
+                        <div class="text">Living Room</div> 
                     </div>
                 </div>
                 <div id="img4" class="img-container col-sm-12 col-md-12 col-lg-6 col-xl-6">
                     <div class="overlay">
-                        <div class="text">Hello World</div>  //TODO Fix IMG overlays
+                        <div class="text">Office</div> 
                     </div>
                 </div>
             </div>
