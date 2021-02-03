@@ -10,7 +10,6 @@
         <div class="card-footer text-muted">
             Already have an account? <span @click="showLogin = true">Login here</span>
         </div>
-
     </div>
 </template>
 

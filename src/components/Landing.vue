@@ -1,31 +1,29 @@
 <template>
     <div id="landing" class="row">
-        <div id="landingText" class="col-md d-flex flex-column align-content-center justify-content-center">
+        <div id="landingText" class="col-md-12 col-lg-4 d-flex flex-column align-content-center justify-content-center">
             <h4 class="d-4">Quality and design within reach</h4>
             <h1 class="d-1">Furnish your dreams</h1>
             <h5 class="d-5">We offer you a wide and varied selection of styles to combine, as well as the best and most innovative collections of furniture, auxiliary, sofas, armchairs, dining rooms, decoration, lighting, bedrooms, mattresses, rest equipment and outdoor furniture ...</h5>
         </div>
-        <div id="landingImage" class="col-md d-flex justify-content-center align-items-center">
-            <div class="row h-100 w-100">
-                <div id="img1" class="img-container col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <div class="overlay">
-                        <div class="text">Bedroom</div> 
-                    </div>
+        <div id="landingImage" class="col-md row h-100 w-100 d-flex justify-content-center ml-1">
+            <div id="img1" class="img-container col-md-5 rounded">
+                <div class="overlay rounded">
+                    <div class="text">Bedroom</div> 
                 </div>
-                <div id="img2" class="img-container col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <div class="overlay">
-                        <div class="text">Kitchen</div> 
-                    </div>
+            </div>
+            <div id="img2" class="img-container col-md-5 rounded">
+                <div class="overlay rounded">
+                    <div class="text">Kitchen</div> 
                 </div>
-                <div id="img3" class="img-container col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <div class="overlay">
-                        <div class="text">Living Room</div> 
-                    </div>
+            </div>
+            <div id="img3" class="img-container col-md-5 rounded">
+                <div class="overlay rounded">
+                    <div class="text">Living Room</div> 
                 </div>
-                <div id="img4" class="img-container col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <div class="overlay">
-                        <div class="text">Office</div> 
-                    </div>
+            </div>
+            <div id="img4" class="img-container col-md-5 rounded">
+                <div class="overlay rounded">
+                    <div class="text">Office</div> 
                 </div>
             </div>
         </div>
@@ -41,23 +39,24 @@ export default {
 <style scoped>
     #img1{
         background-image: url('../assets/bedroom1.jpg');
-        background-size: cover;
-        background-position: center;
+        /* margin-right: 1px; */
     }
     #img2{
         background-image: url('../assets/kitchen1.jpg');
-        background-size: cover;
-        background-position: center;
     }
     #img3{
         background-image: url('../assets/living1.jpg');
-        background-size: cover;
-        background-position: center;
+        /* margin-right: 1px; */
     }
     #img4{
         background-image: url('../assets/office1.jpg');
+    }
+    #img1, #img2, #img3, #img4{
         background-size: cover;
         background-position: center;
+        margin-bottom: .25em;
+        margin-right: .25em;
+        padding: 0 !important;
     }
 
     #landing{
@@ -69,7 +68,7 @@ export default {
         padding: 1%;
     }
     #landingImage{
-        min-height: 86vh;
+        min-height: 84vh;
     }
     /* #landingImage{
         display: grid;
@@ -96,7 +95,12 @@ export default {
         width: 100%;
         opacity: 0;
         transition: .5s ease;
-        background-color: rgba(0, 0, 0, 0.25);
+        background-color: rgba(0, 0, 0, 0.4);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: x-large;
+        color: #fff;
     }   
     .img-container{
         position: relative;
