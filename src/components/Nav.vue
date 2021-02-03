@@ -1,10 +1,17 @@
 <template>
     <nav class="d-flex justify-content-end align-items-center">
         <!-- <div class="navButtonsContainer d-flex justify-content-around align-content-center align-items"> | -->
-            <!-- <router-link to="/about">About</router-link> -->
+        <div v-if="user">
+            <img src="@/assets/user.png" alt="User" style="height: 3vh;" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="btn btn-outline-danger dropdown-item" @click="handleClick">Logout</a>
+                </div>
+        </div>
+        <div v-else>
             <router-link to="/signup"><img src="@/assets/user.png" alt="User" style="height: 3vh;"></router-link>
-            <button class="btn btn-danger" @click="handleClick" v-if="user">Logout</button>
-        <!-- </div> -->
+        </div>
     </nav>
 </template>
 <script>
