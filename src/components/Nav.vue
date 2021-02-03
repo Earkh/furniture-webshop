@@ -45,6 +45,6 @@ export default {
         display: inline-block;
     }
     .dropdown-item:hover{
-        background: #42b983;
+        background: rgba(66, 185, 131, 0.5);
     }
 </style>

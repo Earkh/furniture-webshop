@@ -58,7 +58,6 @@ export default {
         margin-right: .25em;
         padding: 0 !important;
     }
-
     #landing{
         width: 90%;
         height: 90%;
@@ -70,13 +69,6 @@ export default {
     #landingImage{
         min-height: 84vh;
     }
-    /* #landingImage{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        grid-gap: 1em;
-    } */
-
     h1{
         color: #42b983;
     }
@@ -84,7 +76,6 @@ export default {
         text-align: justify;
         text-justify: inter-word;
     }
-
     .overlay {
         position: absolute;
         top: 0;
