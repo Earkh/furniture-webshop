@@ -20,6 +20,5 @@ export default {
 <style>
     #main{
         width: 100%;
-        height: 92vh;
     }
 </style>
