@@ -1,5 +1,5 @@
 <template>
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 14rem;">
         <div class="card-img-top" alt="Card image cap"></div>
         <div class="card-body">
             <h5 class="card-title">Product Name</h5>

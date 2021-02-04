@@ -7,7 +7,11 @@
                     <span style="z-index: 3;">Bedrooms</span>
             </div>
         </div>
-        <div class="row d-flex justify-content-around align-content-center" id="articlesCards">
+        <div id="sales" class="row d-flex flex-column justify-content-center p-1">
+            Sales
+            <div id="slider" class="d-flex justify-content-center align-items-center">Slider</div>
+        </div>
+        <div class="row d-flex justify-content-around align-items-end mt-2" id="articlesCards">
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>
@@ -30,7 +34,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
     #articlesContainer{
         width: 100%;
         height: 92vh;
@@ -51,5 +55,16 @@ export default {
         left: 0;
         width: 100%;
         height: 100%;
+    }
+    #sales{
+        background: #efe583;
+    }
+    #slider{
+        background: gainsboro;
+        width: 100%;
+        height: 25vh;
+    }
+    .btn-vue{
+        color: #bad97b !important;
     }
 </style>
