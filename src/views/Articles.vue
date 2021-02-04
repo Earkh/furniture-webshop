@@ -12,32 +12,24 @@
             <div id="slider" class="d-flex justify-content-center align-items-center">Slider</div>
         </div>
         <div class="row d-flex justify-content-around align-items-end mt-3" id="articlesCards">
-            <carousel>
-                <slide>
-                    <ProductCard></ProductCard>
-                    <ProductCard></ProductCard>
-                    <ProductCard></ProductCard>
-                </slide>
-                <slide>
-                    <ProductCard></ProductCard>
-                    <ProductCard></ProductCard>
-                    <ProductCard></ProductCard>
-                </slide>
-            </carousel>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
         </div>
     </div>
 </template>
 
 <script>
 import ProductCard from '../components/ProductCard'
-import { Carousel, Slide } from 'vue-carousel'
 
 export default {
     name: "Articles",
     components: {
-        ProductCard,
-        Carousel,
-        Slide
+
     }
 }
 </script>
