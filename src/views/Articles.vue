@@ -4,7 +4,7 @@
             <div id="articlesHeader" class="col d-flex justify-content-center align-items-center">
                 <div class="layer">
                 </div>
-                    <span style="z-index: 3;">Bedrooms</span>
+                    <span style="z-index: 2;">Bedrooms</span>
             </div>
         </div>
         <div id="sales" class="row d-flex flex-column justify-content-center p-1">
@@ -12,24 +12,32 @@
             <div id="slider" class="d-flex justify-content-center align-items-center">Slider</div>
         </div>
         <div class="row d-flex justify-content-around align-items-end mt-3" id="articlesCards">
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-
+            <carousel>
+                <slide>
+                    <ProductCard></ProductCard>
+                    <ProductCard></ProductCard>
+                    <ProductCard></ProductCard>
+                </slide>
+                <slide>
+                    <ProductCard></ProductCard>
+                    <ProductCard></ProductCard>
+                    <ProductCard></ProductCard>
+                </slide>
+            </carousel>
         </div>
     </div>
 </template>
 
 <script>
 import ProductCard from '../components/ProductCard'
+import { Carousel, Slide } from 'vue-carousel'
 
 export default {
     name: "Articles",
     components: {
-        ProductCard
+        ProductCard,
+        Carousel,
+        Slide
     }
 }
 </script>

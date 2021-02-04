@@ -5,7 +5,7 @@
             <h1 class="d-1">Furnish your dreams</h1>
             <h5 class="d-5">We offer you a wide and varied selection of styles to combine, as well as the best and most innovative collections of furniture, auxiliary, sofas, armchairs, dining rooms, decoration, lighting, bedrooms, mattresses, rest equipment and outdoor furniture ...</h5>
         </div>
-        <div id="landingImage" class="col-md row h-100 w-100 d-flex justify-content-center ml-1" style="cursor: pointer;" onclick="window.location='/articles';">
+        <div id="landingImage" class="col-md row h-100 w-100 d-flex justify-content-center ml-1">
             <router-link to="/articles" custom v-slot="{ navigate }">
                 <div role="link" id="img1" class="img-container col-md-5 rounded" @click="navigate">
                     <div class="overlay rounded">
@@ -18,7 +18,7 @@
                     <div class="overlay rounded">
                         <div class="text">Kitchen</div> 
                     </div>
-                 </div>                                                                                         <!-- TODO Fix refresh when clicking images link -->
+                 </div>
             </router-link>
             <router-link to="/articles" custom v-slot="{ navigate }">    
                 <div role="link" id="img3" class="img-container col-md-5 rounded" @click="navigate">
