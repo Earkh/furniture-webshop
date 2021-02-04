@@ -1,4 +1,5 @@
 <template>
+
     <div id="articlesContainer">
         <div class="row">
             <div id="articlesHeader" class="col d-flex justify-content-center align-items-center">
@@ -12,26 +13,45 @@
             <div id="slider" class="d-flex justify-content-center align-items-center">Slider</div>
         </div>
         <div class="row d-flex justify-content-around align-items-end mt-3" id="articlesCards">
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
+              
+            <carousel :items-to-show="1" :wrapAround="true" :transition="200">
+                <slide v-for="fruit in fruits" :key="fruit">
+                    <ProductCard title="{{fruit}}"></ProductCard>
+                </slide>
 
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
+                <template #addons>
+                    <navigation />
+                    <pagination />
+                </template>
+            </carousel>
+
+
+
         </div>
     </div>
 </template>
 
 <script>
 import ProductCard from '../components/ProductCard'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 export default {
-    name: "Articles",
-    components: {
-
+  name: 'Articles',
+  components: {
+    ProductCard,
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
+  },
+  data() {
+        return {
+            fruits: ['apple', 'banana', 'orange']
+        };
     }
-}
+};
+
 </script>
 
 <style scoped>
