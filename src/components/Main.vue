@@ -1,8 +1,6 @@
 <template>
-    <div id="main" class="d-flex justify-content-center
-    align-items-center">
+    <div id="main">
         <router-view/>
-        
     </div>
 </template>
 

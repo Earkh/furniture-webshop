@@ -28,6 +28,7 @@ export default {
     }
     #text-home{
         color:#42b983;
+        font-size: 100%;
     }
     #text-home:hover{
         color:#2c3e50;
