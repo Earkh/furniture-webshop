@@ -11,7 +11,7 @@
             Sales
             <div id="slider" class="d-flex justify-content-center align-items-center">Slider</div>
         </div>
-        <div class="row d-flex justify-content-around align-items-end mt-2" id="articlesCards">
+        <div class="row d-flex justify-content-around align-items-end mt-3" id="articlesCards">
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>
             <ProductCard></ProductCard>

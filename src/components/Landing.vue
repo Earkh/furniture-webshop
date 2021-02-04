@@ -18,7 +18,7 @@
                     <div class="overlay rounded">
                         <div class="text">Kitchen</div> 
                     </div>
-                </div>
+                </div>                                                                                          // TODO Fix refresh when clicking images link
             </router-link>
             <router-link to="/articles" custom v-slot="{ navigate }">    
                 <div role="link" id="img3" class="img-container col-md-5 rounded" @click="navigate">
