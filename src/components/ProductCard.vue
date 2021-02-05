@@ -2,8 +2,8 @@
     <div class="card" style="width: 14rem;">
         <div class="card-img-top" alt="Card image cap"></div>
         <div class="card-body">
-            <h5 class="card-title">{{title}}</h5>
-            <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">{{desc}}</p>
             <a href="#" class="btn btn-vue">Buy</a>
         </div>
     </div>
@@ -13,9 +13,13 @@
 
 export default {
     props: {
-    title: {
+    name: {
       type: String,
       required: true
+    },
+    desc: {
+        type: String,
+        required: true
     }
   }
 }

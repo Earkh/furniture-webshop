@@ -15,8 +15,16 @@
         <div class="row d-flex justify-content-around align-items-end mt-3" id="articlesCards">
               
             <carousel :items-to-show="1" :wrapAround="true" :transition="200">
-                <slide v-for="fruit in fruits" :key="fruit">
-                    <ProductCard title="{{fruit}}"></ProductCard>
+                <slide class="d-flex justify-content-center" v-for="product in products" :key="product.id">
+                    <div class="card" style="width: 18rem;">
+                        <img src="../assets/bedroom/malm.webp"  alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{product.name}}</h5>
+                            <p class="card-text">{{product.desc}}</p>
+                            <p class="card-text d-flex justify-content-between align-items-center">{{product.price}}€ <a href="#" class="btn btn-vue">Buy</a></p>
+                            
+                        </div>
+                    </div>     
                 </slide>
 
                 <template #addons>
@@ -47,7 +55,78 @@ export default {
   },
   data() {
         return {
-            fruits: ['apple', 'banana', 'orange']
+            products : [
+                {
+                    id: 1,
+                    name: 'Malm',
+                    desc: 'Estructura de cama con 2 cajones',
+                    price: 300,
+                    img: "malm.webp"
+                },
+                {
+                    id: 2,
+                    name: 'Släkt',
+                    desc: 'Cama nido, 90x200cm',
+                    price: 220,
+                    img: ""
+                },
+                {
+                    id: 3,
+                    name: 'Brimnes',
+                    desc: 'Estructura diván con cajones',
+                    price: 199,
+                    img: ""
+                },
+                {
+                    id: 4,
+                    name: 'Kvitsöy',
+                    desc: 'Canapé tapizado, 90x190cm',
+                    price: 229,
+                    img: ""
+                },
+                {
+                    id: 5,
+                    name: 'Songesand',
+                    desc: 'Armario, 120x60x190cm',
+                    price: 149,
+                    img: ""
+                },
+                {
+                    id: 6,
+                    name: 'Forsand',
+                    desc: 'Armario con espejo, 75x60x200cm',
+                    price: 229,
+                    img: ""
+                },
+                {
+                    id: 7,
+                    name: 'Kullen',
+                    desc: 'Cómoda de 5 cajones',
+                    price: 49,
+                    img: ""
+                },
+                {
+                    id: 8,
+                    name: 'Hemnes',
+                    desc: 'Cómoda de 3 cajones',
+                    price: 119,
+                    img: ""
+                },
+                {
+                    id: 9,
+                    name: 'Askvoll',
+                    desc: 'Mesita de noche de 2 cajones',
+                    price: 30,
+                    img: ""
+                },
+                {
+                    id: 10,
+                    name: 'Ingared',
+                    desc: 'Lámpara de mesa',
+                    price: 7,
+                    img: ""
+                },
+            ]
         };
     }
 };
@@ -85,6 +164,6 @@ export default {
         height: 25vh;
     }
     .btn-vue{
-        color: #bad97b !important;
+        color: #fff !important;
     }
 </style>
