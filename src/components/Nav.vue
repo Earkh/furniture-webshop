@@ -2,7 +2,7 @@
     <nav class="d-flex justify-content-end align-items-center">
         <!-- <div class="navButtonsContainer d-flex justify-content-around align-content-center align-items"> | -->
         <div v-if="user">
-            <img src="@/assets/user.png" alt="User" style="height: 3vh;" class="dropdown-toggle dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+            <img src="@/assets/user.png" alt="User" style="height: 3.5vh;" class="dropdown-toggle dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="#">Action</a>
                 <a class="dropdown-item" href="#">Another action</a>
@@ -10,8 +10,9 @@
             </div>
         </div>
         <div v-else>
-            <router-link to="/signup"><img src="@/assets/user.png" alt="User" style="height: 3vh;"></router-link>
+            <router-link to="/signup"><img src="@/assets/user.png" alt="User" style="height: 3.5vh;"></router-link>
         </div>
+        <img src="@/assets/cart.png" alt="Cart" style="height: 3vh; cursor: pointer" class="ml-2">
         <!-- <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a> -->
     </nav>
 </template>
