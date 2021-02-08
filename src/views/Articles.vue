@@ -38,7 +38,9 @@
                 <div class="card-body">
                     <h5 class="card-title h4">{{product.name}}</h5>
                     <p class="card-text">{{product.desc}}</p>
-                    <p class="card-text d-flex justify-content-between align-items-center h5 font-weight-bold">{{product.price}}€ <a href="#" class="btn btn-vue">Buy</a></p>
+                    <p class="card-text d-flex justify-content-between align-items-center h5 font-weight-bold">{{product.price}}€ 
+                        <button class="btn btn-vue" @click="add2Cart(product)">Buy</button>
+                    </p>
                 </div>
             </div>
         </div>
@@ -132,7 +134,16 @@ export default {
                 },
             ]
         };
-    }
+    },
+    methods:
+        {
+            add2Cart : function (params) {
+                localStorage.setItem('productId', params.id);
+                localStorage.setItem('productName', params.name);
+                localStorage.setItem('productPrice', params.price);
+                localStorage.setItem('productQty', 1);
+            }
+        }
 };
 </script>
 
