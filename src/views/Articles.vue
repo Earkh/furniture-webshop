@@ -67,83 +67,97 @@ export default {
                     name: 'Malm',
                     desc: 'Estructura de cama con 2 cajones',
                     price: 300,
-                    img: require('../assets/bedroom/malm.webp')
+                    img: require('../assets/bedroom/malm.webp'),
+                    qty: 1
                 },
                 {
                     id: 2,
                     name: 'Släkt',
                     desc: 'Cama nido, 90x200cm',
                     price: 220,
-                    img: require('../assets/bedroom/slakt.webp')
+                    img: require('../assets/bedroom/slakt.webp'),
+                    qty: 1
                 },
                 {
                     id: 3,
                     name: 'Brimnes',
                     desc: 'Estructura diván con cajones',
                     price: 199,
-                    img: require('../assets/bedroom/brimnes.webp')
+                    img: require('../assets/bedroom/brimnes.webp'),
+                    qty: 1
                 },
                 {
                     id: 4,
                     name: 'Kvitsöy',
                     desc: 'Canapé tapizado, 90x190cm',
                     price: 229,
-                    img: require('../assets/bedroom/kvitsoy.webp')
+                    img: require('../assets/bedroom/kvitsoy.webp'),
+                    qty: 1
                 },
                 {
                     id: 5,
                     name: 'Songesand',
                     desc: 'Armario, 120x60x190cm',
                     price: 149,
-                    img: require('../assets/bedroom/songesand.webp')
+                    img: require('../assets/bedroom/songesand.webp'),
+                    qty: 1
                 },
                 {
                     id: 6,
                     name: 'Forsand',
                     desc: 'Armario, 75x60x200cm',
                     price: 229,
-                    img: require('../assets/bedroom/forsand.webp')
+                    img: require('../assets/bedroom/forsand.webp'),
+                    qty: 1
                 },
                 {
                     id: 7,
                     name: 'Kullen',
                     desc: 'Cómoda de 5 cajones',
                     price: 49,
-                    img: require('../assets/bedroom/kullen.webp')
+                    img: require('../assets/bedroom/kullen.webp'),
+                    qty: 1
                 },
                 {
                     id: 8,
                     name: 'Hemnes',
                     desc: 'Cómoda de 3 cajones',
                     price: 119,
-                    img: require('../assets/bedroom/hemnes.webp')
+                    img: require('../assets/bedroom/hemnes.webp'),
+                    qty: 1
                 },
                 {
                     id: 9,
                     name: 'Askvoll',
                     desc: 'Mesita de noche de 2 cajones',
                     price: 30,
-                    img: require('../assets/bedroom/askvoll.webp')
+                    img: require('../assets/bedroom/askvoll.webp'),
+                    qty: 1
                 },
                 {
                     id: 10,
                     name: 'Ingared',
                     desc: 'Lámpara de mesa',
                     price: 7,
-                    img: require('../assets/bedroom/ingared.webp')
+                    img: require('../assets/bedroom/ingared.webp'),
+                    qty: 1
                 },
             ]
         };
     },
     methods:
-        {
-            add2Cart : function (params) {
-                localStorage.setItem('productId', params.id);
-                localStorage.setItem('productName', params.name);
-                localStorage.setItem('productPrice', params.price);
-                localStorage.setItem('productQty', 1);
+    {
+        add2Cart : function (params) {
+            let product = JSON.stringify(params)
+            if (localStorage.getItem('product'+params.id) === null) {
+                localStorage.setItem('product'+params.id, product);
+            } else {
+                let incrementQuantity = JSON.parse(localStorage.getItem('product'+params.id));
+                incrementQuantity.qty++;
+                localStorage.setItem('product'+params.id, JSON.stringify(incrementQuantity));
             }
         }
+    }
 };
 </script>
 

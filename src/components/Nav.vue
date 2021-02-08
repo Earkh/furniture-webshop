@@ -12,7 +12,13 @@
         <div v-else>
             <router-link to="/signup"><img src="@/assets/user.png" alt="User" style="height: 3.5vh;"></router-link>
         </div>
-        <img src="@/assets/cart.png" alt="Cart" style="height: 3vh; cursor: pointer" class="ml-2">
+        <img src="@/assets/cart.png" alt="Cart" style="height: 3vh; cursor: pointer" class="ml-2 dropdown-toggle dropdown" id="dropdownCartButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <div class="dropdown-menu" aria-labelledby="dropdownCartButton">
+
+            <Cart></Cart>
+            <Cart></Cart>
+            <Cart></Cart>
+        </div>
         <!-- <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a> -->
     </nav>
 </template>
@@ -20,6 +26,7 @@
 import doLogout from '../composables/logout'
 import getUser from '../composables/getUser'
 import { useRouter } from 'vue-router'
+import Cart from './Cart'
 
 export default {
     setup() {
@@ -35,7 +42,7 @@ export default {
             }
         }
         
-        return { handleClick, user }
+        return { handleClick, user, Cart }
     }
 }
 </script>
