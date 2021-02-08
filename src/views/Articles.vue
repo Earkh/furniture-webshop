@@ -48,18 +48,28 @@
 </template>
 
 <script>
+import { useStore } from 'vuex'
+import { onMounted } from 'vue';
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
+import Card from '../components/Card'
 
 export default {
-  name: 'Articles',
-  components: {
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-  },
-  data() {
+    name: 'Articles',
+    components: {
+        Carousel,
+        Slide,
+        Pagination,
+        Navigation,
+        Card
+    },
+    setup(){
+        const store = useStore()
+        onMounted(() => {
+            store.dispatch('fetchData')
+        })
+    },
+    data() {
         return {
             products : [
                 {
