@@ -2,12 +2,16 @@ import { createStore } from 'vuex'
 
 export default createStore({
     state: {
-        products: []
+        products: [],
+        cart: {}
     },
     mutations: {
         setProduct(state, payload) {
             state.products = payload
-            console.log(state.products)
+        },
+        setCart(state, payload) {
+            state.cart[payload.id] = payload
+            console.log(state.cart)
         }
     },
     actions: {
@@ -19,6 +23,10 @@ export default createStore({
             } catch (error) {
                 console.log(error)
             }
+        },
+        add2Cart({commit, state}, product) {
+            state.cart.hasOwnProperty(product.id) ? product.qty = state.cart[product.id].qty + 1 : product.qty = 1
+            commit('setCart', product)
         }
     },
     modules: {

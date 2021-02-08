@@ -4,7 +4,7 @@
         "name": "Malm",
         "desc": "Estructura de cama con 2 cajones",
         "price": 300,
-        "img": "require('../assets/bedroom/malm.webp')",
+        "img": "img/bedroom/malm.webp",
         "qty": 1
     },
     {
@@ -12,7 +12,7 @@
         "name": "Släkt",
         "desc": "Cama nido, 90x200cm",
         "price": 220,
-        "img": "require('../assets/bedroom/slakt.webp')",
+        "img": "img/bedroom/slakt.webp",
         "qty": 1
     },
     {
@@ -20,7 +20,7 @@
         "name": "Brimnes",
         "desc": "Estructura diván con cajones",
         "price": 199,
-        "img": "require('../assets/bedroom/brimnes.webp')",
+        "img": "img/bedroom/brimnes.webp",
         "qty": 1
     },
     {
@@ -28,7 +28,7 @@
         "name": "Kvitsöy",
         "desc": "Canapé tapizado, 90x190cm",
         "price": 229,
-        "img": "require('../assets/bedroom/kvitsoy.webp')",
+        "img": "img/bedroom/kvitsoy.webp",
         "qty": 1
     },
     {
@@ -36,7 +36,7 @@
         "name": "Songesand",
         "desc": "Armario, 120x60x190cm",
         "price": 149,
-        "img": "require('../assets/bedroom/songesand.webp')",
+        "img": "img/bedroom/songesand.webp",
         "qty": 1
     },
     {
@@ -44,7 +44,7 @@
         "name": "Forsand",
         "desc": "Armario, 75x60x200cm",
         "price": 229,
-        "img": "require('../assets/bedroom/forsand.webp')",
+        "img": "img/bedroom/forsand.webp",
         "qty": 1
     },
     {
@@ -52,7 +52,7 @@
         "name": "Kullen",
         "desc": "Cómoda de 5 cajones",
         "price": 49,
-        "img": "require('../assets/bedroom/kullen.webp')",
+        "img": "img/bedroom/kullen.webp",
         "qty": 1
     },
     {
@@ -60,7 +60,7 @@
         "name": "Hemnes",
         "desc": "Cómoda de 3 cajones",
         "price": 119,
-        "img": "require('../assets/bedroom/hemnes.webp')",
+        "img": "img/bedroom/hemnes.webp",
         "qty": 1
     },
     {
@@ -68,7 +68,7 @@
         "name": "Askvoll",
         "desc": "Mesita de noche de 2 cajones",
         "price": 30,
-        "img": "require('../assets/bedroom/askvoll.webp')",
+        "img": "img/bedroom/askvoll.webp",
         "qty": 1
     },
     {
@@ -76,7 +76,7 @@
         "name": "Ingared",
         "desc": "Lámpara de mesa",
         "price": 7,
-        "img": "require('../assets/bedroom/ingared.webp')",
+        "img": "img/bedroom/ingared.webp",
         "qty": 1
     }
 ]

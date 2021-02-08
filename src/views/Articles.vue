@@ -9,10 +9,8 @@
             </div>
         </div>
         <div id="sales" class="row d-flex flex-column justify-content-center p-1">
-            Sales
+            {{cart}}
             <div id="slider" class="d-flex justify-content-center align-items-center">
-                
-                Slider
                 <!-- <carousel :items-to-show="1" :wrapAround="true" :transition="200">
                     <slide class="d-flex justify-content-center" v-for="product in products" :key="product.id">
                         <div class="card" style="width: 18rem;">
@@ -33,23 +31,17 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center mt-3 offset-lg-1 col-lg-10 w-100" id="articlesCards">
-            <div class="card m-1" style="width: 18rem;" v-for="product in products" :key="product.id">
-                <img :src="product.img"  alt="Card image cap">
-                <div class="card-body">
-                    <h5 class="card-title h4">{{product.name}}</h5>
-                    <p class="card-text">{{product.desc}}</p>
-                    <p class="card-text d-flex justify-content-between align-items-center h5 font-weight-bold">{{product.price}}€ 
-                        <button class="btn btn-vue" @click="add2Cart(product)">Buy</button>
-                    </p>
-                </div>
-            </div>
+            <Card 
+                v-for="product of products" :key="product.id"
+                :product="product"
+            />
         </div>
     </div>
 </template>
 
 <script>
 import { useStore } from 'vuex'
-import { onMounted } from 'vue';
+import { computed, onMounted } from 'vue';
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import Card from '../components/Card'
@@ -68,106 +60,24 @@ export default {
         onMounted(() => {
             store.dispatch('fetchData')
         })
+
+        const products =  computed(() => store.state.products)
+        const cart = computed(() => store.state.cart)
+        return { products, cart }
     },
-    data() {
-        return {
-            products : [
-                {
-                    id: 1,
-                    name: 'Malm',
-                    desc: 'Estructura de cama con 2 cajones',
-                    price: 300,
-                    img: require('../assets/bedroom/malm.webp'),
-                    qty: 1
-                },
-                {
-                    id: 2,
-                    name: 'Släkt',
-                    desc: 'Cama nido, 90x200cm',
-                    price: 220,
-                    img: require('../assets/bedroom/slakt.webp'),
-                    qty: 1
-                },
-                {
-                    id: 3,
-                    name: 'Brimnes',
-                    desc: 'Estructura diván con cajones',
-                    price: 199,
-                    img: require('../assets/bedroom/brimnes.webp'),
-                    qty: 1
-                },
-                {
-                    id: 4,
-                    name: 'Kvitsöy',
-                    desc: 'Canapé tapizado, 90x190cm',
-                    price: 229,
-                    img: require('../assets/bedroom/kvitsoy.webp'),
-                    qty: 1
-                },
-                {
-                    id: 5,
-                    name: 'Songesand',
-                    desc: 'Armario, 120x60x190cm',
-                    price: 149,
-                    img: require('../assets/bedroom/songesand.webp'),
-                    qty: 1
-                },
-                {
-                    id: 6,
-                    name: 'Forsand',
-                    desc: 'Armario, 75x60x200cm',
-                    price: 229,
-                    img: require('../assets/bedroom/forsand.webp'),
-                    qty: 1
-                },
-                {
-                    id: 7,
-                    name: 'Kullen',
-                    desc: 'Cómoda de 5 cajones',
-                    price: 49,
-                    img: require('../assets/bedroom/kullen.webp'),
-                    qty: 1
-                },
-                {
-                    id: 8,
-                    name: 'Hemnes',
-                    desc: 'Cómoda de 3 cajones',
-                    price: 119,
-                    img: require('../assets/bedroom/hemnes.webp'),
-                    qty: 1
-                },
-                {
-                    id: 9,
-                    name: 'Askvoll',
-                    desc: 'Mesita de noche de 2 cajones',
-                    price: 30,
-                    img: require('../assets/bedroom/askvoll.webp'),
-                    qty: 1
-                },
-                {
-                    id: 10,
-                    name: 'Ingared',
-                    desc: 'Lámpara de mesa',
-                    price: 7,
-                    img: require('../assets/bedroom/ingared.webp'),
-                    qty: 1
-                },
-            ]
-        };
-    },
-    methods:
-    {
-        add2Cart : function (params) {
-            let product = JSON.stringify(params)
-            if (localStorage.getItem('product'+params.id) === null) {
-                localStorage.setItem('product'+params.id, product);
-            } else {
-                let incrementQuantity = JSON.parse(localStorage.getItem('product'+params.id));
-                incrementQuantity.qty++;
-                localStorage.setItem('product'+params.id, JSON.stringify(incrementQuantity));
-            }
-        }
-    }
+    // methods:
+    // {
+    //     add2Cart : function (params) {
+    //         let product = JSON.stringify(params)
+    //         if (localStorage.getItem('product'+params.id) === null) {
+    //             localStorage.setItem('product'+params.id, product);
+    //         } else {
+    //             let incrementQuantity = JSON.parse(localStorage.getItem('product'+params.id));
+    //             incrementQuantity.qty++;
+    //             localStorage.setItem('product'+params.id, JSON.stringify(incrementQuantity));
+    //         }
+    //     }
+    // }
 };
 </script>
 

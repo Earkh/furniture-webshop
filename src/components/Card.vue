@@ -1,6 +1,6 @@
 <template>
     <div class="card m-1" style="width: 18rem;">
-        <img :src="product.img"  alt="Card image cap">
+        <img :src=product.img  alt="Card image cap">
         <div class="card-body">
             <h5 class="card-title h4">{{product.name}}</h5>
             <p class="card-text">{{product.desc}}</p>
@@ -12,8 +12,17 @@
 </template>
 
 <script>
+import { useStore } from 'vuex'
 export default {
+    props: ['product'],
+    setup(){
+        const store = useStore()
+        const add2Cart = (product) => {
+            store.dispatch('add2Cart', product)
+        }
 
+        return { add2Cart }
+    }
 }
 </script>
 
