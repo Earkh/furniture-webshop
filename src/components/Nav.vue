@@ -14,10 +14,7 @@
         </div>
         <img src="@/assets/cart.png" alt="Cart" style="height: 3vh; cursor: pointer" class="ml-2 dropdown-toggle dropdown" id="dropdownCartButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="dropdown-menu" aria-labelledby="dropdownCartButton">
-
-            <Cart></Cart>
-            <Cart></Cart>
-            <Cart></Cart>
+            <CartDropdown></CartDropdown>
         </div>
         <!-- <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a> -->
     </nav>
@@ -26,7 +23,7 @@
 import doLogout from '../composables/logout'
 import getUser from '../composables/getUser'
 import { useRouter } from 'vue-router'
-import Cart from './Cart'
+import CartDropdown from './CartDropdown'
 
 export default {
     setup() {
@@ -42,11 +39,14 @@ export default {
             }
         }
         
-        return { handleClick, user, Cart }
+        return { handleClick, user, CartDropdown }
     }
 }
 </script>
 <style>
+    .dropdown-menu{
+        min-width: 15rem;
+    }
     .navButtonsContainer{
         height: 3vh;
         width: 20%;

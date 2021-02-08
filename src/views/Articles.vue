@@ -9,7 +9,7 @@
             </div>
         </div>
         <div id="sales" class="row d-flex flex-column justify-content-center p-1">
-            {{cart}}
+            Promotions
             <div id="slider" class="d-flex justify-content-center align-items-center">
                 <!-- <carousel :items-to-show="1" :wrapAround="true" :transition="200">
                     <slide class="d-flex justify-content-center" v-for="product in products" :key="product.id">
@@ -62,22 +62,9 @@ export default {
         })
 
         const products =  computed(() => store.state.products)
-        const cart = computed(() => store.state.cart)
-        return { products, cart }
-    },
-    // methods:
-    // {
-    //     add2Cart : function (params) {
-    //         let product = JSON.stringify(params)
-    //         if (localStorage.getItem('product'+params.id) === null) {
-    //             localStorage.setItem('product'+params.id, product);
-    //         } else {
-    //             let incrementQuantity = JSON.parse(localStorage.getItem('product'+params.id));
-    //             incrementQuantity.qty++;
-    //             localStorage.setItem('product'+params.id, JSON.stringify(incrementQuantity));
-    //         }
-    //     }
-    // }
+        // const cart = computed(() => store.state.cart)
+        return { products }
+    }
 };
 </script>
 
