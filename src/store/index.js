@@ -20,7 +20,7 @@ export default createStore({
         },
         decrement(state, payload) {
             --state.cart[payload].qty
-            if (state.cart[payload.qty === 1]) {
+            if (state.cart[payload].qty === 0) {
                 delete state.cart[payload]
             }
         }
