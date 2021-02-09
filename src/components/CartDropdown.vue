@@ -11,7 +11,7 @@
                 Total: <span class="h5 font-weight-bold">{{ totalPrice }}€</span>
             </div>
             <div class="col-6">
-                <router-link to="Cart"><button class="btn btn-vue">Checkout</button></router-link>
+                <router-link to="/cart"><button class="btn btn-vue">Checkout</button></router-link>
             </div>
         </div>
     </div>
@@ -21,9 +21,9 @@
 </template>
 
 <script>
-import DropdownProduct from './DropdownProduct'
-import { useStore } from 'vuex'
 import { computed } from 'vue'
+import { useStore } from 'vuex'
+import DropdownProduct from './DropdownProduct'
 
 export default {
     components: {
@@ -33,7 +33,6 @@ export default {
         const store = useStore()
         const items = computed(() => store.state.cart)
         const totalPrice  = computed(() => store.getters.totalPrice)
-
 
         return { items, totalPrice }
     }
@@ -45,5 +44,10 @@ export default {
         width: 90%;
         display: flex;
         justify-content: center;
+    }
+    .dropdownContainer{
+        max-height: 50vh;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
 </style>

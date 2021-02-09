@@ -5,9 +5,6 @@
     </td>
     <td class="font-weight-bold"><span>{{ totalPrice }}</span>€</td>
     <td>
-        <button class="btn btn-danger btn-sm" id="emptyCart" @click="emptyCart">
-            Empty Cart
-        </button>
     </td>
 </template>
 
@@ -25,7 +22,6 @@ export default {
         return {totalAmount, totalPrice, emptyCart}
     }
 }
-
 </script>
 
 <style scoped>

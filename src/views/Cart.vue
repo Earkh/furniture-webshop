@@ -37,14 +37,14 @@
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-sm-8 p-2 mt-5">
-            
+            <!-- TODO Payment Info: Total Price, Address, Shipping Cost, Buy Button -->
         </div>
     </div>
 </template>
 
 <script>
-import { useStore } from 'vuex'
 import { computed } from 'vue'
+import { useStore } from 'vuex'
 import Item from '../components/Item'
 import CartFooter from '../components/CartFooter'
 
@@ -56,7 +56,6 @@ export default {
         const totalPrice = computed(() => store.getters.totalPrice)
         const emptyCart = () => {store.commit('emptyCart')}
         
-
         return { items, totalAmount, totalPrice, emptyCart, Item, CartFooter }
     }
 }

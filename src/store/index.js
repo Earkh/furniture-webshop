@@ -31,7 +31,7 @@ export default createStore({
     actions: {
         async fetchData({commit}) {
             try {
-                const res = await fetch('api.json')
+                const res = await fetch('../api.json')
                 const data = await res.json()
                 commit('setProduct', data)
             } catch (error) {
@@ -49,6 +49,9 @@ export default createStore({
         },
         totalPrice(state) {
             return Object.values(state.cart).reduce((acc, {qty, price}) => acc + qty * price, 0)
+        },
+        getCategory(state, category) {
+              return state.products.filter((product) => product.category == category)
         }
     },
     modules: {

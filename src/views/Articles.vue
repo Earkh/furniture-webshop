@@ -2,10 +2,10 @@
 
     <div id="articlesContainer">
         <div class="row">
-            <div id="articlesHeader" class="col d-flex justify-content-center align-items-center">
+            <div id="articlesHeader" class="col d-flex justify-content-center align-items-center" :class="$route.params.slug">
                 <div class="layer">
                 </div>
-                    <span style="z-index: 2;">Bedrooms</span>
+                    <span style="z-index: 2;">{{$route.params.slug}}</span>
             </div>
         </div>
         <div id="sales" class="row d-flex flex-column justify-content-center p-1">
@@ -31,20 +31,23 @@
             </div>
         </div>
         <div class="row d-flex justify-content-center mt-3 offset-lg-1 col-lg-10 w-100" id="articlesCards">
-            <Card 
-                v-for="product of products" :key="product.id"
-                :product="product"
-            />
+            <div v-for="product of products" :key="product.id">
+                <Card 
+                    v-if="product.category == $route.params.slug"
+                    
+                    :product="product"
+                />
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-import { useStore } from 'vuex'
 import { computed, onMounted } from 'vue';
-import 'vue3-carousel/dist/carousel.css';
+import { useStore } from 'vuex'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import Card from '../components/Card'
+import 'vue3-carousel/dist/carousel.css';
 
 export default {
     name: 'Articles',
@@ -74,13 +77,24 @@ export default {
         height: 92vh;
     }
     #articlesHeader{
-        background-image: url('../assets/bedroom1.jpg');
         background-color: rgba(0, 0, 0, 0.4);
         background-size: cover;
         background-position: center;
         width: 100%;
         height: 25vh;
         font-size: xx-large;
+    }
+    .bedroom{
+        background-image: url('../assets/bedroom1.jpg');
+    }
+    .kitchen{
+        background-image: url('../assets/kitchen1.jpg');
+    }
+    .living{
+        background-image: url('../assets/living1.jpg');
+    }
+    .office{
+        background-image: url('../assets/office1.jpg');
     }
     .layer{
         background-color: rgba(255, 255, 255, 0.5);
