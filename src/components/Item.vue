@@ -14,6 +14,7 @@
             </div>
         </td>
         <td>{{item.price * item.qty}} €</td>
+        <td> <img src="../assets/trash.png" style="width: 5vh; height: 5vh;" @click="deleteItem(item.id)"></td>
     </tr>
 </template>
 
@@ -25,7 +26,9 @@ export default {
         const store = useStore()
         const increment = id => {store.commit('increment', id)}
         const decrement = id => {store.commit('decrement', id)}
-        return {increment, decrement}
+        const deleteItem = id => {store.commit('deleteItem', id)}
+
+        return {increment, decrement, deleteItem}
     }
 }
 </script>

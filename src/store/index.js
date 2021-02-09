@@ -12,7 +12,7 @@ export default createStore({
         setCart(state, payload) {
             state.cart[payload.id] = payload
         },
-        emptyCart() {
+        emptyCart(state) {
             state.cart = {}
         },
         increment(state, payload) {
@@ -23,6 +23,9 @@ export default createStore({
             if (state.cart[payload].qty === 0) {
                 delete state.cart[payload]
             }
+        },
+        deleteItem(state, payload) {
+            delete state.cart[payload]
         }
     },
     actions: {

@@ -3,13 +3,14 @@
         <div class="col-sm-8 p-2 mt-5">
             <h2 class="d-2 d-flex justify-content-center align-items-center">Shopping Cart</h2>
             <hr>
-            <table class="table">
+            <table class="table w-100">
                 <thead>
                 <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Item</th>
-                    <th scope="col">Qty</th>
-                    <th scope="col">Total</th>
+                    <th scope="col" style="min-width: 25%">#</th>
+                    <th scope="col" style="min-width: 25%">Item</th>
+                    <th scope="col" style="min-width: 25%">Qty</th>
+                    <th scope="col" style="min-width: 25%">Total</th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody id="items">
@@ -19,9 +20,13 @@
                     />
                 </tbody>
                 <tfoot>
-                <tr id="cartFooter">
-                    <!-- <Footer v-else/> -->
-                </tr>
+                    <tr id="cartFooter" v-if="Object.keys(items).length === 0">
+                        <th scope="row" colspan="5"  >
+                            Your shopping cart is empty!
+                            <router-link to="/"><button class="btn btn-danger">Keep shopping</button></router-link>
+                        </th>
+                    </tr>
+                    <CartFooter v-else/>
                 </tfoot>
             </table>
         </div>
@@ -41,6 +46,7 @@
 import { useStore } from 'vuex'
 import { computed } from 'vue'
 import Item from '../components/Item'
+import CartFooter from '../components/CartFooter'
 
 export default {
     setup(){
@@ -49,10 +55,9 @@ export default {
         const totalAmount = computed(() => store.getters.totalAmount)
         const totalPrice = computed(() => store.getters.totalPrice)
         const emptyCart = () => {store.commit('emptyCart')}
-        const incrementQuantity = id => {store.commit('increment', id)}
-        const decrementQuantity = id => {store.commit('decrement', id)}
+        
 
-        return { items, totalAmount, totalPrice, emptyCart, incrementQuantity, decrementQuantity, Item }
+        return { items, totalAmount, totalPrice, emptyCart, Item, CartFooter }
     }
 }
 </script>
