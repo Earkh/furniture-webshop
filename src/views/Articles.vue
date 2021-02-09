@@ -62,7 +62,7 @@ export default {
         })
 
         const products =  computed(() => store.state.products)
-        // const cart = computed(() => store.state.cart)
+
         return { products }
     }
 };

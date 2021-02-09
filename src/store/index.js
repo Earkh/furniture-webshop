@@ -11,7 +11,6 @@ export default createStore({
         },
         setCart(state, payload) {
             state.cart[payload.id] = payload
-            console.log(state.cart)
         },
         emptyCart() {
             state.cart = {}

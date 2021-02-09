@@ -11,8 +11,7 @@
                 Total: <span class="h5 font-weight-bold">{{ totalPrice }}€</span>
             </div>
             <div class="col-6">
-                <button class="btn btn-vue">Checkout</button>
-                <!-- TODO Add Router Link to Cart View -->
+                <router-link to="Cart"><button class="btn btn-vue">Checkout</button></router-link>
             </div>
         </div>
     </div>
