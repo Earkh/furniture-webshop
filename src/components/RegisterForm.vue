@@ -40,7 +40,7 @@ export default {
         const password = ref('')
 
         const handleSubmit = async () => {
-            await register(email.value, password.value)
+            await register(email.value, password.value, name.value, address.value)
             if (!error.value) {
                 context.emit('register')
             }

@@ -4,7 +4,7 @@
         <div v-if="user">
             <img src="@/assets/user.png" alt="User" style="height: 3.5vh;" class="dropdown-toggle dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Welcome {{user.displayName}}</a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a>
             </div>
