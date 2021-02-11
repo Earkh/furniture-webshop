@@ -4,7 +4,7 @@
         <div v-if="user">
             <img src="@/assets/user.png" alt="User" style="height: 3.5vh;" class="dropdown-toggle dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="#">Welcome</a>
+                <a class="dropdown-item" href="#">Welcome </a>
                 <a class="dropdown-item" href="#">Another action</a>
                 <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a>
             </div>
@@ -18,9 +18,12 @@
             <CartDropdown></CartDropdown>
         </div>
     </nav>
+    <pre>
+        {{userInfo}}
+    </pre>
 </template>
 <script>
-import { computed } from 'vue'
+import { computed, toRef } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import getUser from '../composables/getUser'
@@ -33,11 +36,11 @@ export default {
     setup() {
         const { logout, error } = doLogout()
         const { user } = getUser()
+        
         const users = getUsers()
         const store = useStore()
         const router = useRouter()
         const items = computed(() => store.state.cart)
-
 
         // console.log(users)
         const handleClick = async () => {
@@ -48,6 +51,11 @@ export default {
         }
         
         return { handleClick, user, users, CartDropdown, items }
+    },
+    computed() {
+        const { userInfo } = toRef(getUserInfo)
+        console.log(userInfo)
+        return { userInfo }
     }
 }
 </script>
