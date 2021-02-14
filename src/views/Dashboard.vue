@@ -1,11 +1,14 @@
 <template>
-    <div class="col-xs-10 col-sm-8 col-md-6 col-lg-4 col-xl-3">
-        <div class="card">
-            <div class="card-header">
-                Logged!
-            </div>
-            <div class="card-body">
-                {{ user.email }}
+    <div class="h-100 d-flex justify-content-center align-items-center">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Logged!
+                </div>
+                <div class="card-body">
+                    {{ user.email }}
+                </div>
+                <router-link to="/"><button class="btn btn-vue mb-4">Return</button></router-link>
             </div>
         </div>
     </div>

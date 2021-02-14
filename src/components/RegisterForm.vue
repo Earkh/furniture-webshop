@@ -11,6 +11,8 @@
                     <input type="text" id="name" name="name" class="form-control mb-2" v-model="name" required>
                     <h6 class="card-title mb-2">Address</h6>
                     <input type="text" id="address" name="Address" class="form-control mb-2" v-model="address" required>
+                    <h6 class="card-title mb-2">Phone</h6>
+                    <input type="text" id="phone" name="Phone" class="form-control mb-2" v-model="phone" required>
                     <h6 class="card-title mb-2">Email</h6>
                     <input type="email" id="email" name="email" class="form-control mb-2" v-model="email" required>
                     <h6 class="card-title mb-2">Password</h6>
@@ -40,7 +42,7 @@ export default {
         const password = ref('')
 
         const handleSubmit = async () => {
-            await register(email.value, password.value, name.value, address.value)
+            await register(email.value, password.value, name.value, phone.value, address.value)
             if (!error.value) {
                 context.emit('register')
             }
