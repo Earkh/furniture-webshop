@@ -26,8 +26,6 @@ import doLogin from '../composables/login'
 export default {
     setup(props, context) {
         const { error, login } = doLogin()
-
-        // refs
         const email = ref('')
         const password = ref('')
 

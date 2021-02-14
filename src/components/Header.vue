@@ -39,6 +39,4 @@ export default {
     a:hover {
         text-decoration: none;
     }
-    
-    
 </style>
