@@ -1,6 +1,6 @@
 import { _ } from 'core-js'
 import { ref } from 'vue'
-import { auth, projectFirestore } from '../firebase/config'
+import { auth } from '../firebase/config'
 
 const user = ref(auth.currentUser)
 
