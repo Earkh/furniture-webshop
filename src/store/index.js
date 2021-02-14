@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import router from '../router'
 
 export default createStore({
     state: {
@@ -29,6 +30,7 @@ export default createStore({
         }
     },
     actions: {
+
         async fetchData({commit}) {
             try {
                 const res = await fetch('../api.json')

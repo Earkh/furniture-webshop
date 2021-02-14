@@ -1,20 +1,27 @@
 import { ref } from 'vue'
-import { auth } from '../firebase/config'
+import { auth, projectFirestore } from '../firebase/config'
 
 const error = ref(null)
 
-const register = async (email, password) => {
+const register = async (email, password, name, phone, address) => {
     error.value = null
 
     try {
-        const res = await auth.createUserWithEmailAndPassword(email, password)
-        if (!res) {
-            throw new Error('Couldn\'t complete the register')
-        }
-        // await res.user.updateProfile({name, address})
-        // error.value = null
+        // const res = await auth.createUserWithEmailAndPassword(email, password)
+        // if (!res) {
+        //     throw new Error('Couldn\'t complete the register')
+        // }
+        // // await res.user.updateProfile({name, address})
+        // // error.value = null
         
-        return res
+        // return res
+        auth.createUserWithEmailAndPassword(email, password).then(cred => {
+            return projectFirestore.collection('users').doc(cred.user.uid).set({
+                name: name,
+                phone: phone,
+                address: address
+            })
+        })
     } catch(err) {
         console.log(err.message)
         error.value = err.message
