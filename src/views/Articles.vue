@@ -1,5 +1,5 @@
 <template>
-
+    {{array}}
     <div id="articlesContainer">
         <div class="row">
             <div id="articlesHeader" class="col d-flex justify-content-center align-items-center" :class="$route.params.slug">
@@ -63,9 +63,7 @@ export default {
         onMounted(() => {
             store.dispatch('fetchData')
         })
-
         const products =  computed(() => store.state.products)
-
         return { products }
     }
 };

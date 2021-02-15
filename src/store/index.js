@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { projectFirestore } from '../firebase/config'
 
 export default createStore({
     state: {
@@ -31,8 +32,13 @@ export default createStore({
     actions: {
         async fetchData({commit}) {
             try {
-                const res = await fetch('../api.json')
-                const data = await res.json()
+                // const res = await fetch('../api.json')
+                // const data = await res.json()
+                // commit('setProduct', data)
+                const res = await projectFirestore.collection('products').get()
+                const data = res.docs.map(doc => {
+                    return { ...doc.data(), id: doc.id}
+                })
                 commit('setProduct', data)
             } catch (error) {
                 console.log(error)
