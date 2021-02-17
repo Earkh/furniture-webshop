@@ -1,23 +1,27 @@
 <template>
     <nav class="d-flex justify-content-end align-items-center">
-        <div v-if="user">
-            <img src="@/assets/user.png" alt="User" style="height: 3.5vh;" class="dropdown-toggle dropdown" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <router-link to="profile"><a class="dropdown-item">Profile</a></router-link>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a>
+        <div class="dropdown">
+            <img src="@/assets/user.png" alt="User" style="height: 3.5vh; cursor: pointer;" class="dropdown-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
+                <div v-if="user">
+                    <router-link to="/profile"><a class="dropdown-item">Profile</a></router-link>
+                    <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a>
+                </div>
+                <div v-else>
+                    <router-link to="/signup">Sign In</router-link>
+                </div>
             </div>
         </div>
-        <div v-else>
-            <router-link to="/signup"><img src="@/assets/user.png" alt="User" style="height: 3.5vh;"></router-link>
-        </div>
-        <img src="@/assets/cart.png" alt="Cart" style="height: 3vh; cursor: pointer" class="ml-2 dropdown-toggle dropdown" id="dropdownCartButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div class="dropdown-menu" aria-labelledby="dropdownCartButton">
-            <CartDropdown></CartDropdown>
+        <div class="dropdown">
+            <img src="@/assets/cart.png" alt="Cart" style="height: 3vh; cursor: pointer" class="ml-2 dropdown-toggle" id="dropdownCartButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <CartDropdown></CartDropdown>
+            </div>
         </div>
         <span class="badge badge-pill badge-danger" style="margin-left: -12px; margin-top: -20px; z-index: 4" v-if="Object.keys(items).length > 0">{{Object.keys(items).length}}</span>
     </nav>
 </template>
+
 <script>
 import { computed } from 'vue'
 import { useStore } from 'vuex'
