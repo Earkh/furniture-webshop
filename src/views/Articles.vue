@@ -63,6 +63,7 @@ export default {
         onMounted(() => {
             store.dispatch('fetchData')
         })
+        
         const products =  computed(() => store.state.products)
         return { products }
     }
