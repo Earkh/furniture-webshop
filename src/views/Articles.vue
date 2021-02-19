@@ -1,5 +1,4 @@
 <template>
-    {{array}}
     <div id="articlesContainer">
         <div class="row">
             <div id="articlesHeader" class="col d-flex justify-content-center align-items-center" :class="$route.params.slug">
@@ -10,24 +9,75 @@
         </div>
         <div id="sales" class="row d-flex flex-column justify-content-center p-1">
             Promotions
-            <div id="slider" class="d-flex justify-content-center align-items-center">
-                <!-- <carousel :items-to-show="1" :wrapAround="true" :transition="200">
-                    <slide class="d-flex justify-content-center" v-for="product in products" :key="product.id">
-                        <div class="card" style="width: 18rem;">
-                            <img :src="product.img"  alt="Card image cap">
-                            <div class="card-body">
-                                <h5 class="card-title h4">{{product.name}}</h5>
-                                <p class="card-text">{{product.desc}}</p>
-                                <p class="card-text d-flex justify-content-between align-items-center h5 font-weight-bold">{{product.price}}€ <a href="#" class="btn btn-vue">Buy</a></p>
-                                
-                            </div>
-                        </div>     
-                    </slide>
-                    <template #addons>
-                        <navigation />
-                        <pagination />
-                    </template>
-                </carousel> -->
+            <div id="slider"  class="d-flex justify-content-center align-items-center">
+                
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators" style="margin-bottom: -30px">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>                                                                                                
+                        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <HorizontalCard :product="products[1]" v-if="products[1]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+                        <div class="carousel-item">
+                            <HorizontalCard :product="products[2]" v-if="products[2]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+                        <div class="carousel-item">
+                            <HorizontalCard :product="products[9]" v-if="products[9]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+                        <div class="carousel-item">
+                            <HorizontalCard :product="products[12]" v-if="products[12]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+                        <div class="carousel-item">
+                            <HorizontalCard :product="products[16]" v-if="products[16]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+                        <div class="carousel-item">
+                            <HorizontalCard :product="products[20]" v-if="products[20]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+                        <div class="carousel-item">
+                            <HorizontalCard :product="products[24]" v-if="products[24]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+                        <div class="carousel-item">
+                            <HorizontalCard :product="products[28]" v-if="products[28]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+                        <div class="carousel-item">
+                            <HorizontalCard :product="products[32]" v-if="products[32]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+                        <div class="carousel-item">
+                            <HorizontalCard :product="products[36]" v-if="products[36]"></HorizontalCard>
+                            <div v-else>Loading</div>
+                        </div>
+
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="margin-left: -100px">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="margin-right: -100px">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+
             </div>
         </div>
         <div class="row d-flex justify-content-center mt-3 offset-lg-1 col-lg-10 w-100" id="articlesCards">
@@ -45,18 +95,14 @@
 <script>
 import { computed, onMounted } from 'vue';
 import { useStore } from 'vuex'
-import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 import Card from '../components/Card'
-import 'vue3-carousel/dist/carousel.css';
+import HorizontalCard from '../components/HorizontalCard'
 
 export default {
     name: 'Articles',
     components: {
-        Carousel,
-        Slide,
-        Pagination,
-        Navigation,
-        Card
+        Card,
+        HorizontalCard
     },
     setup(){
         const store = useStore()
