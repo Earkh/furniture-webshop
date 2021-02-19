@@ -5,6 +5,7 @@
             <div class="dropdown-menu p-2" aria-labelledby="dropdownMenuButton">
                 <div v-if="user">
                     <router-link to="/profile"><a class="dropdown-item">Profile</a></router-link>
+                    <router-link to="/orders"><a class="dropdown-item">My Orders</a></router-link>
                     <a class="dropdown-item" href="#" @click.prevent="handleClick">Logout</a>
                 </div>
                 <div v-else>

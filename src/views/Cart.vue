@@ -41,12 +41,12 @@
             <p></p>
             <p>VAT 7%: <span class="h6 font-weight-bold">{{ (totalPrice * 0.07).toFixed(2) }}€</span></p>
             <p>TOTAL: <span class="h6 font-weight-bold">{{ (totalPrice + totalPrice * 0.07).toFixed(2) }}€</span></p>
-            <button class="btn btn-vue mt-4">BUY NOW</button>
+            <button class="btn btn-vue mt-4" @click="makeOrder">BUY NOW</button>
         </div>
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-sm-8 p-2 mt-5">
-            <!-- TODO Payment Info: Total Price, Address, Shipping Cost, Buy Button -->
+
             
         </div>
     </div>
@@ -59,9 +59,11 @@ import Item from '../components/Item'
 import CartFooter from '../components/CartFooter'
 import getUser from '../composables/getUser'
 import { auth, projectFirestore } from '../firebase/config'
+import placeOrder from '../composables/makeOrder'
 
 export default {
-    setup(){
+    setup(props, context){
+        const { error, order } = placeOrder()
         const store = useStore()
         const items = computed(() => store.state.cart)
         const totalAmount = computed(() => store.getters.totalAmount)
@@ -77,8 +79,15 @@ export default {
                 console.log("No such document!")
             }
         })
+        const makeOrder = async () => {
+            await order(items.value, uid)
+            if (!error.value) {
+                context.emit('makeOrder')
+                store.commit('emptyCart')
+            }
+        }
         
-        return { items, totalAmount, totalPrice, emptyCart, Item, CartFooter, user, userData }
+        return { items, totalAmount, totalPrice, emptyCart, Item, CartFooter, user, userData, makeOrder }
     }
 }
 </script>
