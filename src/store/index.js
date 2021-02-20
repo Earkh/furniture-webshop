@@ -32,9 +32,6 @@ export default createStore({
     actions: {
         async fetchData({commit}) {
             try {
-                // const res = await fetch('../api.json')
-                // const data = await res.json()
-                // commit('setProduct', data)
                 const res = await projectFirestore.collection('products').get()
                 const data = res.docs.map(doc => {
                     return { ...doc.data(), id: doc.id}
